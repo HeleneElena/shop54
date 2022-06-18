@@ -20,7 +20,7 @@ const cart = document.querySelector('.cart'),
       cartClose = document.querySelector('.cart-close');
 
 btnCart.addEventListener('click', () => {
-    cart.style.display = 'block';
+    cart.style.display = 'flex';
 
     cartClose.addEventListener('click', () => {
         cart.style.display = 'none';
@@ -29,4 +29,28 @@ btnCart.addEventListener('click', () => {
 
 // end warenkorb
 
+//waren im warenkorb
+const cards = document.querySelectorAll('.goods .card'),
+      cartWrapper = document.querySelector('.cart-wrapper'),
+      cartEmpty = document.querySelector('#cart-empty'),
+      counterGoods = document.querySelector('.counter');
 
+cards.forEach(el => {
+    const btnCard = el.querySelector('.btn');
+          
+    btnCard.addEventListener('click', () => {
+        cartEmpty.innerHTML = '';
+       const cardClone = el.cloneNode(true);
+       cartWrapper.append(cardClone);
+       showData();					
+     });
+});
+// end waren im warenkorb
+
+// считаем у значка карзины, и отображаем, сколько там товаров
+function showData() {
+    const cardsCart = cartWrapper.querySelectorAll('.card');
+    counterGoods.textContent = cardsCart.length;
+
+    console.log(counterGoods);
+}
