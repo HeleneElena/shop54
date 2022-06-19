@@ -39,18 +39,34 @@ cards.forEach(el => {
     const btnCard = el.querySelector('.btn');
           
     btnCard.addEventListener('click', () => {
-        cartEmpty.innerHTML = '';
        const cardClone = el.cloneNode(true);
        cartWrapper.append(cardClone);
-       showData();					
+       showData();	
+       
+       const removeBtn = cardClone.querySelector('.btn');
+       removeBtn.textContent = 'Удалить из корзины';
+       removeBtn.addEventListener('click', () => {
+       cardClone.remove();
+        showData();
+       });
      });
 });
 // end waren im warenkorb
 
 // считаем у значка карзины, и отображаем, сколько там товаров
 function showData() {
-    const cardsCart = cartWrapper.querySelectorAll('.card');
+    const cardsCart = cartWrapper.querySelectorAll('.card'),
+          cartPrice = cartWrapper.querySelectorAll('.card-price'),
+          cardTotal = document.querySelector('.cart-total span');
+    let sum = 0;
     counterGoods.textContent = cardsCart.length;
 
-    console.log(counterGoods);
+    cartPrice.forEach(el => {
+        let price = parseFloat(el.textContent);
+        sum += price;
+    });
+    cardTotal.textContent = sum;
+    
+    cardsCart.length !== 0 ? cartEmpty.innerHTML = '' : cartEmpty.innerHTML = 'Ваша корзина пуста';
+
 }
