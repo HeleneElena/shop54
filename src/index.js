@@ -26,7 +26,6 @@ btnCart.addEventListener('click', () => {
         cart.style.display = 'none';
     });
 });
-
 // end warenkorb
 
 //waren im warenkorb
@@ -66,7 +65,5 @@ function showData() {
         sum += price;
     });
     cardTotal.textContent = sum;
-    
     cardsCart.length !== 0 ? cartEmpty.innerHTML = '' : cartEmpty.innerHTML = 'Ваша корзина пуста';
-
 }
