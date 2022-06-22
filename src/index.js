@@ -74,10 +74,14 @@ function addCart() {
 }
 // end waren im warenkorb
 
-// фильтр Акции и поиск тоже
+// фильтр Акции и поиск тоже, фильтр Price
 function actionPage() {
     const cards = document.querySelectorAll('.goods .card'),
-          discountCheckbox = document.querySelector('#discount-checkbox');
+          discountCheckbox = document.querySelector('#discount-checkbox'),
+          min = document.querySelector('#min'),
+          max = document.querySelector('#max'),
+          search = document.querySelector('.search-wrapper_input'),
+          searchBtn = document.querySelector('.search-btn');
 
           discountCheckbox.addEventListener('click', () => {
             cards.forEach(el => {
@@ -90,8 +94,44 @@ function actionPage() {
                 }
             });
           });
+
+    function filterPrice() {
+        cards.forEach(el => {
+            const cardPrice = el.querySelector('.card-price');
+            const price = parseFloat(cardPrice.textContent);
+        
+            if ((min.value && price < min.value) || (max.value && price > max.value)) {
+                el.parentNode.style.display = 'none';
+            }  else {
+                el.parentNode.style.display = '';
+            }
+        });
+    }
+
+    min.addEventListener('change', filterPrice);
+    max.addEventListener('change', filterPrice);
+
+    function searchGoods() {
+        searchBtn.addEventListener('click', () => {
+            const searchText = new RegExp(search.value.trim(), 'i');
+            cards.forEach(el => {
+                const title = el.querySelector('.card-title');
+                if (!searchText.test(title.textContent)) {
+                    el.parentNode.style.display = 'none';
+                } else {
+                    el.parentNode.style.display = '';
+                }
+            });
+        });
+    }
+    searchGoods();
+   
+
+
 }
-// end фильтр Акции
+// end фильтр Акции, end фильтр Price
+
+
 toggleCheckbox();
 toggleCard();
 addCart();
