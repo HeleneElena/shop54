@@ -14,7 +14,6 @@ function toggleCheckbox() {
             });
     });
 }
-
 // end checkbox
 
 //warenkorb
@@ -83,33 +82,22 @@ function actionPage() {
           search = document.querySelector('.search-wrapper_input'),
           searchBtn = document.querySelector('.search-btn');
 
-          discountCheckbox.addEventListener('click', () => {
-            cards.forEach(el => {
-                if (discountCheckbox.checked) {
-                    if (!el.querySelector('.card-sale')) {
-                        el.parentNode.style.display = 'none';
-                    } 
-                } else {
-                        el.parentNode.style.display = '';
-                }
-            });
-          });
-
-    function filterPrice() {
+    function filter() {
         cards.forEach(el => {
             const cardPrice = el.querySelector('.card-price');
             const price = parseFloat(cardPrice.textContent);
-        
-            if ((min.value && price < min.value) || (max.value && price > max.value)) {
+            const discount = el.querySelector('.card-sale');
+
+        if ((min.value && price < min.value) || (max.value && price > max.value)) {
                 el.parentNode.style.display = 'none';
-            }  else {
+            }  else if (discountCheckbox.checked && !discount) {
+                el.parentNode.style.display = 'none';
+            } else {
                 el.parentNode.style.display = '';
             }
+            
         });
     }
-
-    min.addEventListener('change', filterPrice);
-    max.addEventListener('change', filterPrice);
 
     function searchGoods() {
         searchBtn.addEventListener('click', () => {
@@ -122,16 +110,25 @@ function actionPage() {
                     el.parentNode.style.display = '';
                 }
             });
+            search.value = ''; 
+
         });
     }
     searchGoods();
-   
 
-
+    discountCheckbox.addEventListener('click', filter);
+    min.addEventListener('change', filter);
+    max.addEventListener('change', filter);
 }
 // end фильтр Акции, end фильтр Price
 
+// получение данных с сервера
+function getData() {
+    fetch('../db/db.json');
+}
+// end получение данных с сервера
 
+getData();
 toggleCheckbox();
 toggleCard();
 addCart();
