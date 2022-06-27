@@ -1,163 +1,163 @@
 {
 	"goods": [{
-		"title": "Игровая приставка Sony PlayStation 4 Pro",
-		"price": 33990,
+		"title": "Spielekonsole Sony PlayStation 4 Pro",
+		"price": 339,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1033180284.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1033180283.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Игровая приставка Sony PlayStation 3 Super Slim",
-		"price": 16499,
+		"title": "Spielekonsole Sony PlayStation 3 Super Slim",
+		"price": 164,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1027495663.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1028469540.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Игровая приставка Xbox One X",
-		"price": 39990,
+		"title": "Spielekonsole Xbox One X",
+		"price": 399,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1024358491.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Игровая приставка Xbox One S",
-		"price": 23411,
+		"title": "Spielekonsole Xbox One S",
+		"price": 234,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1024822131.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1024822128.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Игровая приставка Nintendo Switch",
-		"price": 24751,
+		"title": "Spielekonsole Nintendo Switch",
+		"price": 247,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1021386685.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1026072683.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Игровая приставка Sega Retro Genesis HD",
-		"price": 3624,
+		"title": "Spielekonsole Sega Retro Genesis HD",
+		"price": 362,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1024928305.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1024928306.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Игровая приставка Dendy Junior",
-		"price": 1551,
+		"title": "Spielekonsole Dendy Junior",
+		"price": 155,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1021877092.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1021877092.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Игровая приставка Sony PlayStation Classic",
-		"price": 10445,
+		"title": "Spielekonsole Sony PlayStation Classic",
+		"price": 104,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1025222877.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/102538227.jpg",
-		"category": "Игровая приставка"
+		"category": "Spielekonsole"
 	}, {
-		"title": "Клавиатура Logitech Wireless Keyboard K360",
-		"price": 2390,
+		"title": "Tastatur Logitech Wireless Keyboard K360",
+		"price": 23,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1015518726.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/102518725.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Клавиатура Defender Element HB-195",
-		"price": 566,
+		"title": "Tastatur Defender Element HB-195",
+		"price": 56,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1028488609.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1028488611.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Игровая клавиатура Steelseries Apex M750- RU",
-		"price": 12848,
+		"title": "Tastatur für Spiele Steelseries Apex M750- RU",
+		"price": 128,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1027006299.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1027006301.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Мышь + коврик A4Tech Bloody V7M+B-071",
-		"price": 1649,
+		"title": "Maus + Pad A4Tech Bloody V7M+B-071",
+		"price": 164,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1026202934.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1026202933.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Мышь Trust Varo",
-		"price": 1097,
+		"title": "Maus Trust Varo",
+		"price": 10,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1025117257.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1025117012.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Мышь Genius DX-120",
-		"price": 350,
+		"title": "Maus Genius DX-120",
+		"price": 53,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1014472326.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1014472325.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Коврик для мыши Orico MPA9040",
-		"price": 1279,
+		"title": "Mauspad Orico MPA9040",
+		"price": 12,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1026748248.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1026748250.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Коврик для мыши Trust GXT 760 Glide RGB",
-		"price": 4959,
+		"title": "Mauspad Trust GXT 760 Glide RGB",
+		"price": 49,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1025053907.jpg",
-		"category": "Периферия для ПК"
+		"category": "PC-Peripheriegeräte"
 	}, {
-		"title": "Метро: Исход",
-		"price": 1479,
+		"title": "Metro: Exodus",
+		"price": 147,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1026951535.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}, {
-		"title": "Darksiders III. Коллекционное издание",
-		"price": 3990,
+		"title": "Darksiders III. Sammleredition",
+		"price": 39,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1023840682.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1023849642.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}, {
 		"title": "Mortal Kombat X",
-		"price": 1076,
+		"price": 49,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1011627377.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}, {
 		"title": "Microsoft Windows 10 Home (32/64-bit)",
-		"price": 9412,
+		"price": 94,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1013975751.jpg",
 		"hoverImg": "https://cdn1.ozone.ru/multimedia/c400/1013975799.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}, {
-		"title": "1С:Предприятие 8.3. Версия для обучения программированию",
-		"price": 560,
+		"title": "1C:Enterprise 8.3. Version der Programmierausbildung",
+		"price": 56,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1015773076.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}, {
 		"title": "ABBYY FotoTranslate",
-		"price": 805,
+		"price": 80,
 		"sale": false,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1001559725.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}, {
 		"title": "Destiny (Xbox 360)",
-		"price": 723,
+		"price": 72,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1021419099.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}, {
 		"title": "Игра Onrush (PS4 Sony)",
-		"price": 1794,
+		"price": 57,
 		"sale": true,
 		"img": "https://cdn1.ozone.ru/multimedia/c400/1023547851.jpg",
-		"category": "Игры и софт"
+		"category": "Spiele und Software"
 	}]
 }
