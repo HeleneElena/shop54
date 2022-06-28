@@ -124,25 +124,91 @@ function actionPage() {
 
 // получение данных с сервера
 function getData() {
-    const goodsWrapper = document.querySelector('.goods');
-   fetch('../db/db.json').then((response) => {
+   const goodsWrapper = document.querySelector('.goods');
+   return fetch('../db/db.json').then((response) => {
         if(response.ok) {
             return response.json();
         } else {
             throw new Error ('Es gibt einige Fehler: ' + response.status);
         }
     })
-    .then(data => console.log(data))
+    .then(data => {
+        return data;
+    })
     .catch(err =>{
          console.warn(err); // об ошибке сообщение разработчику
          goodsWrapper.innerHTML = '<div style="color:red; font-size:2rem" >Etwas ist schief gelaufen</div>'; // об ошибке сообщение user
     });
 }
+
+// выводим карточки товара
+function renderCards(data) {
+    const goodsWrapper = document.querySelector('.goods');
+    data.goods.forEach(el => {
+        const card = document.createElement('div');
+        card.className = 'col-12 col-md-6 col-lg-4 col-xl-3';
+        card.innerHTML = `
+				<div class="card" data-category="${el.category}">
+                    ${el.sale ? '<div class="card-sale">🔥Hot Sale🔥</div>' : ''}
+					<div class="card-img-wrapper">
+						<span class="card-img-top"
+							style="background-image: url(${el.img})"></span>
+					</div>
+					<div class="card-body justify-content-between">
+						<div class="card-price">${el.price} €</div>
+						<h5 class="card-title">${el.title}</h5>
+						<button class="btn btn-primary">In den Warenkorb</button>
+					</div>
+				</div>
+        `;
+        goodsWrapper.append(card);
+    });
+}
 // end получение данных с сервера
+// делаем каталог кнопку
+function renderCatalog() {
+    const cards = document.querySelectorAll('.goods .card'),
+          catalogList = document.querySelector('.catalog-list'),
+          catalogBtn = document.querySelector('.catalog-button'),
+          catalogWrapper = document.querySelector('.catalog');
+    const categories = new Set();
+    
+    cards.forEach(el => {
+        categories.add(el.dataset.category);
+    });
 
-getData();
+    categories.forEach(el => {
+        const li = document.createElement('li');
+        li.textContent = el;
+        catalogList.append(li);
+    });
 
-toggleCheckbox();
-toggleCard();
-addCart();
-actionPage();
+    catalogBtn.addEventListener('click', (e) => {
+        if (catalogWrapper.style.display) {
+            catalogWrapper.style.display = '';
+        } else {
+            catalogWrapper.style.display = 'block';
+        }
+       
+        if (e.target.tagName === 'LI') {
+            cards.forEach(el => {
+                if (el.dataset.category === e.target.textContent) {
+                    el.parentNode.style.display = '';
+                } else {
+                    el.parentNode.style.display = 'none';
+                }
+            });
+        }
+    });
+}
+
+getData().then(data => {
+    renderCards(data);
+    toggleCheckbox();
+    toggleCard();
+    addCart();
+    actionPage();
+    renderCatalog();
+});
+
+
