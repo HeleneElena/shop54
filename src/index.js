@@ -82,23 +82,6 @@ function actionPage() {
           search = document.querySelector('.search-wrapper_input'),
           searchBtn = document.querySelector('.search-btn');
 
-    function filter() {
-        cards.forEach(el => {
-            const cardPrice = el.querySelector('.card-price');
-            const price = parseFloat(cardPrice.textContent);
-            const discount = el.querySelector('.card-sale');
-
-        if ((min.value && price < min.value) || (max.value && price > max.value)) {
-                el.parentNode.style.display = 'none';
-            }  else if (discountCheckbox.checked && !discount) {
-                el.parentNode.style.display = 'none';
-            } else {
-                el.parentNode.style.display = '';
-            }
-            
-        });
-    }
-
     function searchGoods() {
         searchBtn.addEventListener('click', () => {
             const searchText = new RegExp(search.value.trim(), 'i');
@@ -121,7 +104,31 @@ function actionPage() {
     max.addEventListener('change', filter);
 }
 // end фильтр Акции, end фильтр Price
+ function filter() {
+    const cards = document.querySelectorAll('.goods .card'),
+          discountCheckbox = document.querySelector('#discount-checkbox'),
+          min = document.querySelector('#min'),
+          max = document.querySelector('#max'),
+          activeLi = document.querySelector('.catalog-list li.active');
 
+        cards.forEach(el => {
+            const cardPrice = el.querySelector('.card-price');
+            const price = parseFloat(cardPrice.textContent);
+            const discount = el.querySelector('.card-sale');
+
+        el.parentNode.style.display = '';// сначала все карточки видимы
+
+        if ((min.value && price < min.value) || (max.value && price > max.value)) { // потом скрываем ненужные
+                el.parentNode.style.display = 'none';
+            }  else if (discountCheckbox.checked && !discount) {
+                el.parentNode.style.display = 'none'; 
+            } else if (activeLi) {
+                if (el.dataset.category !== activeLi.textContent) {
+                    el.parentNode.style.display = 'none'; 
+                } 
+            }
+        });
+    }
 // получение данных с сервера
 function getData() {
    const goodsWrapper = document.querySelector('.goods');
@@ -170,7 +177,8 @@ function renderCatalog() {
     const cards = document.querySelectorAll('.goods .card'),
           catalogList = document.querySelector('.catalog-list'),
           catalogBtn = document.querySelector('.catalog-button'),
-          catalogWrapper = document.querySelector('.catalog');
+          catalogWrapper = document.querySelector('.catalog'),
+          filterTitle = document.querySelector('.filter-title h5');
     const categories = new Set();
     
     cards.forEach(el => {
@@ -182,6 +190,8 @@ function renderCatalog() {
         li.textContent = el;
         catalogList.append(li);
     });
+
+    const allLi = catalogList.querySelectorAll('li');
 
     catalogBtn.addEventListener('click', (e) => {
         if (catalogWrapper.style.display) {
@@ -198,17 +208,27 @@ function renderCatalog() {
                     el.parentNode.style.display = 'none';
                 }
             });
+            allLi.forEach(el => {
+                if (el === e.target) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+            filterTitle.textContent = e.target.textContent;
+            filterTitle.classList.add('filtertitle');
+            filter();
         }
     });
 }
 
 getData().then(data => {
     renderCards(data);
+    renderCatalog();
     toggleCheckbox();
     toggleCard();
     addCart();
     actionPage();
-    renderCatalog();
 });
 
 
