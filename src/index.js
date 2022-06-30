@@ -80,7 +80,14 @@ function actionPage() {
           min = document.querySelector('#min'),
           max = document.querySelector('#max'),
           search = document.querySelector('.search-wrapper_input'),
-          searchBtn = document.querySelector('.search-btn');
+          searchBtn = document.querySelector('.search-btn'),
+          logo = document.querySelector('.logo');
+
+          logo.addEventListener('click', () => {
+            cards.forEach(el => {
+                el.parentNode.style.display = '';
+            });
+          });
 
     function searchGoods() {
         searchBtn.addEventListener('click', () => {
